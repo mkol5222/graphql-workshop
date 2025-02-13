@@ -18,8 +18,8 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 X-REQUEST-TYPE: GraphQL
 
-query Q1  {
-  getAssets(userDefined: true) {
+query Q1($userDefined: Boolean)  {
+  getAssets(userDefined: $userDefined) {
     status 
       assets  {
         id
@@ -27,4 +27,8 @@ query Q1  {
        state
       }
   }
+}
+
+{
+  "userDefined": true
 }

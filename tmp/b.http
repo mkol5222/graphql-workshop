@@ -1,0 +1,25 @@
+
+# # curl 'http://127.0.0.1:3000/graphql' \
+#   -H 'content-type: application/json' \
+#   --data-raw '{"query":"query MyQuery {\n  multiplyBy3(n: 1.5)\n}","variables":{"n":15},"operationName":"MyQuery","extensions":{}}' | jq .
+
+POST http://127.0.0.1:3000/graphql
+Content-Type: application/json
+
+{"query":"query MyQuery {\n  multiplyBy3(n: 1.5)\n}","variables":{"n":15},"operationName":"MyQuery","extensions":{}}
+
+###
+
+POST http://127.0.0.1:3000/graphql
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query MyQuery($cislo: Float!, $name: String!) {  
+    multiplyBy3(n: $cislo)
+    hello(name: $name) 
+}
+
+{
+    "cislo": 7,
+    "name": "Martin"
+}
