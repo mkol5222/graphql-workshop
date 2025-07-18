@@ -8,7 +8,7 @@ import { typeDefs } from "./typedefs.ts"
 import { resolvers } from "./resolvers.ts"
 
 // load key from base64 string
-const keyString = "TtZcADCD+tKCyxpw9iIWOaNO/y5Km8kpi1Qc8Hys1D6PgQjhMMz0PubNWBJ0uh/coH5Q6HZt16s+YUGkrK5TtlkJiSanoBxP4+NxNwUaBOUK027MwrkAl9d5mjMpINZcZhI6tKr+5BvkuSRT3B5V5i6qmI0Yv3T/vzHWO18enz8="
+const keyString = "BowNugl4Sg+mA/vuSQ7FEjMpm/O31rJZBv9wwFCkeRiOPfQznQ5GpBXrgxeBsYhH/AYugOwMl6qEqJ7up92cOWHb8C5mh/BDwphJTnkN+6Zz3SqHL+hdgGR9W4w2qs3zpL9hnoZu7jBbKH07svHTomzCSbm3Xik8AjEXe9n0p6Q="
 const keyBuffer = Uint8Array.from(atob(keyString), c => c.charCodeAt(0));
 const JWT_KEY = await crypto.subtle.importKey(
   "raw",

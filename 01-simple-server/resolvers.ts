@@ -25,6 +25,12 @@ function sum2(_: any, { a, b }: { a: number, b: number }) {
   return a+b;
 }
 
+function sum2b(parent: any, args: { a: number, b: number }) {
+  const { a, b } = args;
+  return a + b;
+}
+
+
 
 function multiply(_: any, args) {
   console.log('multiply', JSON.stringify(args, null, 2))
@@ -42,6 +48,7 @@ function minus(_: any, args: { a: number, b: number }) {
 const resolvers = {
   Query: {
     sum2,
+    sum2b,
     helloWorld,
     hello,
     minus,

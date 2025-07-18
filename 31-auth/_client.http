@@ -1,20 +1,20 @@
 POST http://127.0.0.1:3000/graphql
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIifQ.Rm71ZQD8m-B6VRgku7CSuw6tpX99RQwMRhe2FTFmnI4ua4Y92_O_WbZMtsUEw_dLy9NkKsQrc4uJ62Q9j1oleQ
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJ0cyI6MTc1MjgyNDg1MzY1OCwicm9sZXMiOlsibm90YWRtaW4iLCJ1c2VyIl0sImVudiI6InByb2QifQ.4KahglBfaBjEci9g1y2iO68WvWjsd5lpjQWynlAWQRlWVOt5yexjgBEo4NKUp05ppDQxpmQutOqRlOGKV2KHAA
 
 { "query": "{ auth1 }"}
 
 ###
 POST http://127.0.0.1:3000/graphql
 Content-Type: application/json
-Authorization: Basic user:passwd
+Authorization: Basic user1:vpn123
 
 { "query": "{ auth1 }"}
 ###
 
 POST http://127.0.0.1:3000/graphql
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIifQ.ys10kELxkV4PRRkcUV-RKyd31nSrODAHa3aZ9F_-edW5irDe2cM57vxxOQTIcEKIOOZ-5Ww7zMhR0SuXZDdTeg
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJ0cyI6MTc1MjgyNDQ1NjU3OSwicm9sZXMiOlsiYWRtaW4iLCJ1c2VyIl0sImVudiI6InByb2QifQ.VTLw_tj84A8g10B-MJu1wXmPR8eunl2ga53z4riDHbOXjbvaZhhtqk0TUn1OjS6Q3LFyIoXpsCF3q3IIUmxCVg
 
 { "query": "{ auth1 }"}
 

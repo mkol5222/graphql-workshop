@@ -2,7 +2,15 @@
 // function resolver(parent: any, args: any, context: any, info: any) {
 
 function auth1(parent: any, args: any, context: any, info: any) {
-  return { test: "auth1", resolverGot: { parent, args, context, info } };
+  // if (!context.authorization || !context.authorization.basic || !context.authorization.basic.user) {
+  //   throw new Error("Unauthorized: Basic auth required");
+  // }
+  // // check if passwd matches
+  // if (context.authorization?.basic?.passwd !== "vpn123") {
+  //   throw new Error("Unauthorized: Invalid password");
+  // }
+  const isAdmin = context.authorization?.jwt?.jwtPayload?.roles?.includes("admin") || false;
+  return { test: "auth1", isAdmin, tokenData: context.authorization?.jwt?.jwtPayload, resolverGot: { parent, args, context, info } };
 }
 
 function helloWorld() {

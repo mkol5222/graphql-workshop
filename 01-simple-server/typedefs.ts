@@ -15,6 +15,8 @@ type Query {
     multiply(x: Float, y: Float): MultiplyResponse
 
     multiplyBy2(n: Int!): Int!
+
+    sum2b(a: Int!, b: Int!): Int!
 }
 `;
 

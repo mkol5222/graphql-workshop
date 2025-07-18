@@ -2,7 +2,7 @@
 
 import { create, decode, verify } from "https://deno.land/x/djwt@v3.0.2/mod.ts";
 
-
+// generate some shared key for JWT
 const key = await crypto.subtle.generateKey(
   { name: "HMAC", hash: "SHA-512" },
   true,
@@ -13,10 +13,12 @@ const exportedKey = await crypto.subtle.exportKey("raw", key);
 const keyArray = new Uint8Array(exportedKey);
 const keyString = btoa(String.fromCharCode(...keyArray));
 console.log("Key (base64):", keyString);
-
 console.log("Key:", key);
 
-const jwt = await create({ alg: "HS512", typ: "JWT" }, { foo: "bar" }, key);
+
+// create a JWT with the key
+const tokenPayload = { foo: "bar", ts: Date.now(), roles: ["notadmin", "user"], env: "prod" };
+const jwt = await create({ alg: "HS512", typ: "JWT" }, tokenPayload, key);
 
 console.log("JWT:", jwt);
 
