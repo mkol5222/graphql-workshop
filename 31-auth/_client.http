@@ -1,0 +1,13 @@
+POST http://127.0.0.1:3000/graphql
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIifQ.Rm71ZQD8m-B6VRgku7CSuw6tpX99RQwMRhe2FTFmnI4ua4Y92_O_WbZMtsUEw_dLy9NkKsQrc4uJ62Q9j1oleQ
+
+{ "query": "{ auth1 }"}
+
+###
+POST http://127.0.0.1:3000/graphql
+Content-Type: application/json
+Authorization: Basic user:passwd
+
+{ "query": "{ auth1 }"}
+###
