@@ -38,13 +38,21 @@ const yoga = createYoga({
     }
 
     let jwtPayload = null;
+    let jwtValid = false;
     if (token && authType && authType.toLowerCase() === 'bearer') {
       // Bearer token: verify the JWT
-      jwtPayload = await verify(token, JWT_KEY);
+      jwtPayload = null;
+      jwtValid = false;
+      try {
+        jwtPayload = await verify(token, JWT_KEY);
+        jwtValid = true;
+      } catch (error) {
+        console.error("JWT verification failed:", error);
+      } 
     }
 
     // return context object with auth info
-    return { authorization: { authHeader, token, authType, basic: { user, passwd }, jwt: jwtPayload } };
+    return { authorization: { authHeader, token, authType, basic: { user, passwd }, jwt: { jwtPayload, jwtValid } } };
   }
 })
  

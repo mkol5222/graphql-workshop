@@ -11,3 +11,11 @@ Authorization: Basic user:passwd
 
 { "query": "{ auth1 }"}
 ###
+
+POST http://127.0.0.1:3000/graphql
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIifQ.ys10kELxkV4PRRkcUV-RKyd31nSrODAHa3aZ9F_-edW5irDe2cM57vxxOQTIcEKIOOZ-5Ww7zMhR0SuXZDdTeg
+
+{ "query": "{ auth1 }"}
+
+###
